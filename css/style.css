@@ -48,7 +48,7 @@ body {
   text-shadow: 0 0 14px rgba(240, 194, 75, 0.35);
 }
 
-.marquee h1 .sub {
+.marquee h1.sub {
   display: block;
   font-size: 0.32em;
   letter-spacing: 0.4em;
@@ -84,7 +84,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   flex-wrap: wrap;
 }
 
-.controls input, .controls select {
+.controls input,.controls select {
   font-family: var(--ui-font);
   padding: 0.7rem 1rem;
   border-radius: 6px;
@@ -117,13 +117,13 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   flex-direction: column;
 }
 
-.ticket:hover, .ticket:focus-visible {
+.ticket:hover,.ticket:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.5);
   outline: none;
 }
 
-.ticket .poster {
+.ticket.poster {
   width: 100%;
   aspect-ratio: 2/3;
   background: linear-gradient(160deg, #3a1117, #1c0a0d);
@@ -137,7 +137,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   overflow: hidden;
 }
 
-.ticket .poster img { width: 100%; height: 100%; object-fit: cover; }
+.ticket.poster img { width: 100%; height: 100%; object-fit: cover; }
 
 .stamp {
   position: absolute;
@@ -169,7 +169,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   background-position: center;
 }
 
-.ticket .info {
+.ticket.info {
   padding: 0.8rem 0.9rem 1rem;
   flex: 1;
   display: flex;
@@ -177,14 +177,14 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   gap: 0.3rem;
 }
 
-.ticket .info h3 {
+.ticket.info h3 {
   font-family: var(--display-font);
   font-size: 1.1rem;
   margin: 0;
   color: var(--cream);
 }
 
-.ticket .info .meta {
+.ticket.info.meta {
   font-family: var(--ui-font);
   font-size: 0.75rem;
   color: var(--gold);
@@ -208,6 +208,11 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
   justify-content: center;
   padding: 1rem;
   z-index: 50;
+}
+
+/* FIX: Ye line add ki hai - hidden attribute ko priority milegi */
+.modal[hidden] {
+  display: none;
 }
 
 .modal-content {
@@ -272,7 +277,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.6rem; }
 
 .modal-info { padding: 1.2rem 1.4rem 1.6rem; }
 .modal-info h2 { font-family: var(--display-font); color: var(--gold-bright); margin: 0 0 0.2rem; }
-.modal-info .meta { font-family: var(--ui-font); font-size: 0.8rem; color: var(--gold); margin: 0 0 0.8rem; }
+.modal-info.meta { font-family: var(--ui-font); font-size: 0.8rem; color: var(--gold); margin: 0 0 0.8rem; }
 .license-tag {
   display: inline-block;
   margin-top: 0.6rem;
@@ -364,5 +369,5 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ticket { transition: none; }
-}
+ .ticket { transition: none; }
+  }
