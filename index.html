@@ -79,5 +79,31 @@
 </footer>
 
 <script src="/js/app.js"></script>
+
+<!-- Modal Fix Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('playerModal');
+    const closeBtn = document.getElementById('closeModal');
+    
+    // Page load pe modal hide karo
+    modal.hidden = true;
+    
+    // X button pe click = modal band
+    closeBtn.onclick = function() {
+      modal.hidden = true;
+      document.getElementById('playerArea').innerHTML = '';
+    };
+    
+    // Modal ke bahar click = band
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        modal.hidden = true;
+        document.getElementById('playerArea').innerHTML = '';
+      }
+    };
+  });
+</script>
+
 </body>
 </html>
