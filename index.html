@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>सिनेमाघर — Public Domain Cinema</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="marquee">
+  <div class="marquee-inner">
+    <span class="bulb"></span>
+    <h1>सिनेमाघर <span class="sub">CINEMA GHAR</span></h1>
+    <span class="bulb"></span>
+  </div>
+  <p class="tagline">सिर्फ़ public domain aur copyright-free films — kanooni roop se 100% saaf</p>
+</header>
+
+<main>
+  <section class="controls">
+    <input id="searchInput" type="text" placeholder="Movie khojiye..." />
+    <select id="languageFilter">
+      <option value="all">Saari bhashayein</option>
+      <option value="Hindi">Hindi</option>
+      <option value="English">English</option>
+    </select>
+  </section>
+
+  <section id="movieGrid" class="grid"></section>
+  <p id="emptyState" class="empty-state" hidden>Koi movie nahi mili. Filter badal kar dekhiye, ya neeche admin panel se nayi movie add karein.</p>
+</main>
+
+<!-- Player Modal -->
+<div id="playerModal" class="modal" hidden>
+  <div class="modal-content">
+    <button id="closeModal" class="close-btn" aria-label="Band karein">×</button>
+    <div id="playerArea"></div>
+    <div class="modal-info">
+      <h2 id="modalTitle"></h2>
+      <p id="modalMeta"></p>
+      <p id="modalDesc"></p>
+      <p id="modalLicense" class="license-tag"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Panel -->
+<section class="admin">
+  <button id="toggleAdmin" class="admin-toggle">+ Admin: Nayi movie add karein</button>
+  <div id="adminPanel" class="admin-panel" hidden>
+    <h3>Nayi movie add karein</h3>
+    <p class="admin-note">⚠️ Sirf genuinely verified public domain ya Creative Commons content hi add karein. Pehle archive.org par check kar lein ki usage "Public Domain Mark" ya "CC0/CC-BY" ho.</p>
+    <form id="addMovieForm">
+      <label>Title <input type="text" name="title" required /></label>
+      <label>Saal (Year) <input type="number" name="year" /></label>
+      <label>Bhasha (Language) <input type="text" name="language" required placeholder="Hindi / English / etc." /></label>
+      <label>Genre <input type="text" name="genre" /></label>
+      <label>Source
+        <select name="source" id="sourceSelect">
+          <option value="archive.org">archive.org</option>
+          <option value="external">External link (Wikimedia etc.)</option>
+        </select>
+      </label>
+      <label id="archiveIdLabel">archive.org Identifier <input type="text" name="archiveId" placeholder="jaise: Kismet_201903" /></label>
+      <label id="externalUrlLabel" hidden>External URL <input type="url" name="externalUrl" placeholder="https://commons.wikimedia.org/..." /></label>
+      <label>Description <textarea name="description" rows="3"></textarea></label>
+      <label>License note <input type="text" name="license" placeholder="jaise: Public Domain Mark 1.0" /></label>
+      <button type="submit">Movie Add Karein</button>
+      <p id="formMessage"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Yeh website sirf public domain aur copyright-free content stream karti hai. Koi bhi copyrighted material upload ya stream nahi kiya jaata.</p>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "cinema-ghar",
+  "version": "1.0.0",
+  "description": "Public domain Hindi & world cinema streaming site (legal content only)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
